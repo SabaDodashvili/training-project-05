@@ -1,0 +1,202 @@
+.about-me {
+  &__container {
+    display: flex;
+    align-items: center;
+    @media (max-width: 767px) {
+      // flex-wrap: wrap;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__squares {
+    flex: 0 1 50%;
+    position: relative;
+    height: 80%;
+    &.anim {
+      .about-me__square-yellow {
+        opacity: 1;
+        transform: scale(1);
+      }
+      .about-me__square-blue {
+        opacity: 1;
+        transform: scale(1);
+      }
+      .about-me__square-dashed {
+        opacity: 1;
+        transform: scale(1);
+      }
+      .about-me__square-image {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    @media (max-width: 767px) {
+      height: 45%;
+      width: 100%;
+      margin: 0 0 20px 0;
+    }
+  }
+
+  &__square-yellow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #eaaf78;
+    width: 60%;
+    height: 65%;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.8s ease all 0s;
+  }
+
+  &__square-blue {
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    background-color: #0d5f70;
+    width: 45%;
+    height: 80%;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.8s ease all 0.2s;
+  }
+
+  &__square-dashed {
+    position: absolute;
+    bottom: 7%;
+    right: 0;
+    height: 50%;
+    width: 50%;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.8s ease all 0.3s;
+    & img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &__square-image {
+    position: absolute;
+    bottom: 18%;
+    right: 15%;
+    height: 70%;
+    width: 55%;
+    box-shadow: 0px 0px 28px -2px rgba(0, 0, 0, 0.57);
+    opacity: 0;
+    transform: scale(0);
+    transition: 1s ease all 0.5s;
+    & img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &__info {
+    flex: 0 1 50%;
+    padding: 0 0 0 50px;
+    &.anim {
+      .about-me__text {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+      .about-me__title {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+      .about-me__learn-more-link {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    @media (max-width: 767px) {
+      padding: 0;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font-family: 'PlayfairDisplay';
+    font-size: 38px;
+    font-weight: 700;
+    margin: 0 0 30px 0;
+    transform: translateY(130%);
+    opacity: 0;
+    transition: 0.8s all ease 0s;
+    @media (max-width: 767px) {
+      font-size: 30px;
+    }
+    @media (max-width: 767px) {
+      margin: 0 0 20px 0;
+    }
+  }
+
+  &__text {
+    font-family: 'RobotoCondensed';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+    font-style: italic;
+    margin: 0 0 80px 0;
+    transform: translateX(100%);
+    transition: 0.8s all ease 0s;
+    @media (max-width: 767px) {
+      margin: 0 0 40px 0;
+      font-size: 13px;
+    }
+  }
+
+  &__learn-more-link {
+    font-size: 18px;
+    font-family: 'RobotoCondensed';
+    font-weight: 700;
+    color: #000;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 70px;
+    text-align: center;
+    padding: 25px 0 0 0;
+    transition: 2s ease all 0s;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.8s ease all 0.2s;
+    @media (max-width: 767px) {
+      font-size: 16px;
+      padding: 27px 0 0 0;
+    }
+    body.mouse &:hover,
+    &:focus {
+      color: #eaaf78;
+    }
+    body.mouse &:hover .about-me__link-rect,
+    &:focus .about-me__link-rect {
+      stroke: #eaaf78;
+      stroke-dashoffset: calc(70px + 70px / 2);
+    }
+  }
+  &__link-svg,
+  &__link-rect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    fill: none;
+  }
+  &__link-rect {
+    stroke: #000;
+    stroke-width: 5px;
+    stroke-dasharray: 70px 200px;
+    stroke-dashoffset: calc(2 * 200px + 2 * 70px + 70px / 2);
+    transition: 2s all ease 0s;
+  }
+}

@@ -1,0 +1,53 @@
+.header {
+  position: fixed;
+  z-index: 20;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  transform: translateY(-100%);
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    position: relative;
+    height: 40px;
+    width: 50px;
+    & svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      fill: #fff;
+    }
+  }
+
+  &__manu {
+  }
+}
+.container {
+}
+.manu {
+  &__body {
+  }
+
+  &__list {
+  }
+
+  &__item {
+    &:first-child {
+      display: none !important;
+    }
+  }
+
+  &__link {
+  }
+
+  &__icon {
+  }
+}

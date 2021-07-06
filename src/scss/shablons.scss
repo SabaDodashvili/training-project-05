@@ -1,0 +1,329 @@
+//==================================== B U R G E R  M A N U =========================================
+.manu {
+  &__icon {
+    display: none;
+    & span,
+    &::before,
+    &::after {
+      position: absolute;
+      right: 0;
+      height: 10%;
+      width: 100%;
+      background-color: #fff;
+      transition: 0.3s all ease 0s;
+      border-radius: 2px;
+    }
+    &::before,
+    &::after {
+      content: '';
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    & span {
+      top: 50%;
+      transform: scale(1) translateY(-50%);
+      width: 70%;
+    }
+    &.active {
+      &::before {
+        top: 50%;
+        transform: rotate(-45deg);
+        margin: -1px 0 0 0;
+      }
+      &::after {
+        bottom: 50%;
+        transform: rotate(45deg);
+        margin: 0 0 -1px 0;
+      }
+      & span {
+        transform: scale(0) translateY(-50%);
+      }
+    }
+    @media (max-width: 767px) {
+      display: block;
+      z-index: 105;
+      position: relative;
+      width: 27px;
+      height: 16px;
+      cursor: pointer;
+    }
+  }
+  &__body {
+    @media (max-width: 767px) {
+      position: fixed;
+      background-color: #0e0e0e;
+      top: 0;
+      left: -100%;
+      height: 100vh;
+      width: 100%;
+      padding: 70px 45px 30px 45px;
+      transition: left 0.3s ease 0s;
+      overflow: auto;
+      z-index: 100;
+      &.active {
+        left: 0;
+      }
+    }
+  }
+  &__list {
+    @media (min-width: 767px) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      list-style: none;
+    }
+    @media (max-width: 767px) {
+      margin: 0 0 35px 0;
+    }
+  }
+
+  //*============================================
+  body.mouse &__item:hover &__sub-list {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translate(0px, 0px);
+  }
+  body.touch &__item {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+  }
+  body.touch &__arrow {
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 8.5px 0 8.5px;
+    border-color: #000000 transparent transparent transparent;
+    margin: -3px 0 0 5px;
+    transition: transform 0.3s ease 0s;
+  }
+  body.touch &__item.active &__sub-list {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translate(0px, 0px);
+    display: block;
+  }
+  body.touch &__item.active &__arrow {
+    transform: rotate(180deg);
+  }
+  //*============================================
+  &__item {
+    position: relative;
+    padding: 5px 0;
+    margin: 0 15px;
+    min-width: 70px;
+    @media (max-width: 767px) {
+      margin: 0 0 30px 0;
+      justify-content: center;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+  &__link {
+    text-align: center;
+    display: inline-block;
+    min-width: 70px;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #fff;
+    position: relative;
+    padding: 15px 0px;
+    transition: color 0.3s ease 0s;
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 10%;
+      height: 2px;
+      background-color: #ffd19b;
+      transition: 0.3s all ease 0s;
+      opacity: 0;
+    }
+    body.mouse &:hover::before {
+      opacity: 1;
+      visibility: visible;
+      width: 100%;
+    }
+    &.active {
+      color: #ffd19b;
+    }
+    &.active::before {
+      width: 100%;
+      opacity: 1;
+    }
+    @media (max-width: 767px) {
+      font-size: 22px;
+      font-weight: 700;
+    }
+  }
+  &__arrow {
+    display: none;
+  }
+  &__sub-list {
+    top: 100%;
+    left: 0;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    min-width: 200px;
+    position: absolute;
+    transform: translate(0px, 10%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease 0s;
+    @media (max-width: 767px) {
+      position: relative;
+      flex: 1 1 100%;
+      display: none;
+      margin: 20px 0 0 0;
+    }
+  }
+  &__sub-item {
+    margin: 0 0 10px 0;
+    &:last-child {
+      margin: 0;
+    }
+  }
+  &__sub-link {
+    color: #fff;
+  }
+}
+//==================================== B U R G E R  M A N U =========================================
+//======================================== S P O I L E R ============================================
+.spoiler-open-btn {
+  cursor: pointer;
+}
+.spoiler-body {
+  position: relative;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease 0s;
+}
+//======================================== S P O I L E R ============================================
+//============================================ T A B S ==============================================
+.tabs {
+  &__nav {
+    display: flex;
+    &_column {
+      display: block;
+    }
+  }
+
+  &__nav-btn {
+    &.active {
+    }
+  }
+
+  &__body {
+  }
+
+  &__item {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+//============================================ T A B S ==============================================
+//======================================== P A G E  S L I D E R =====================================
+.wrapper {
+  // overflow: hidden;
+  min-height: 100%;
+  opacity: 0;
+  transition: opacity 1.5s ease 0.5s;
+  &.loaded {
+    opacity: 1;
+    .header {
+      transition: transform 0.8s ease 1.5s;
+      transform: translateX(0px);
+    }
+  }
+  &.free .page__pagination {
+    transition: 0.3s all ease 0s;
+    transform: translate(50px, -50%);
+    opacity: 0;
+  }
+}
+.page {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  &__pagination {
+    z-index: 5;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translate(0px, -50%);
+    display: flex;
+    flex-direction: column;
+  }
+  &__bullet {
+    cursor: pointer;
+    height: 70px;
+    width: 6px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 10px 0;
+    border-radius: 10px;
+    transition: background-color 0.3s ease 0s;
+    &_active {
+      background-color: #000;
+    }
+  }
+  &__scroll {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+  }
+  &__drag-scroll {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #000;
+    cursor: pointer;
+    z-index: 5;
+  }
+}
+.screen {
+  flex: 1 0 100%;
+  position: relative;
+  &_about {
+    position: relative;
+    z-index: 10;
+    background: #fff;
+  }
+  &__content {
+    padding: 75px 0 15px 0;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    @media (max-width: 767px) {
+      padding: 60px 0 15px 0;
+    }
+  }
+}
+//======================================== P A G E  S L I D E R =====================================
