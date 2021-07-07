@@ -4,10 +4,12 @@
       .contact__column_video {
         opacity: 1;
         transform: translateX(0);
+        transition: 0.8s all ease 0s;
       }
       .contact__column_info {
         opacity: 1;
         transform: translateX(0);
+        transition: 1s all ease 0.2s;
       }
     }
   }
@@ -24,15 +26,15 @@
     &_video {
       opacity: 0;
       transform: translateX(-100%);
-      transition: 0.8s all ease 0s;
       position: relative;
       z-index: 2;
+      transition: 0.3s all ease 3s;
     }
     &_info {
       flex: 0 1 30%;
       opacity: 0;
       transform: translateX(150%);
-      transition: 1s all ease 0.2s;
+      transition: 0.3s all ease 3s;
     }
   }
 

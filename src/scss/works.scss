@@ -4,10 +4,12 @@
       .works-slider {
         opacity: 1;
         transform: scale(1);
+        transition: 0.8s ease all 0s;
       }
       .column-top__info {
         opacity: 1;
         transform: translateX(0px);
+        transition: 1.2s ease all 0.8s;
       }
     }
   }
@@ -70,7 +72,7 @@
     padding: 0 35px;
     transform: translateX(91%);
     opacity: 0;
-    transition: 1.2s ease all 0.8s;
+    transition: 0.3s ease all 0s;
     @media (max-width: 767px) {
       transform: translateX(-110%);
       transition: 1s ease all 0s;
@@ -233,7 +235,7 @@
   position: relative;
   opacity: 0;
   transform: scale(0);
-  transition: 0.8s ease all 0s;
+  transition: 0.3s ease all 3s;
 }
 .works-slider-wrapper {
   display: flex;
