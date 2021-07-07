@@ -1280,13 +1280,6 @@ body.mouse .blog-card__link:hover .blog-card__link-rect,
   transition: 2s all ease 0s;
 }
 
-.works__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0 -10px !important;
-}
-
 .works__container.anim .works-slider {
   opacity: 1;
   -webkit-transform: scale(1);
@@ -1299,6 +1292,14 @@ body.mouse .blog-card__link:hover .blog-card__link-rect,
   -webkit-transform: translateX(0px);
       -ms-transform: translateX(0px);
           transform: translateX(0px);
+}
+
+.works__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 -10px;
+  height: 100%;
 }
 
 .works__column {
@@ -1565,16 +1566,6 @@ body.mouse .blog-card__link:hover .blog-card__link-rect,
   border-top-color: transparent;
 }
 
-.contact__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 0 -7.5px;
-}
-
 .contact__container.anim .contact__column_video {
   opacity: 1;
   -webkit-transform: translateX(0);
@@ -1587,6 +1578,17 @@ body.mouse .blog-card__link:hover .blog-card__link-rect,
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
           transform: translateX(0);
+}
+
+.contact__row {
+  margin: 0 -7.5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
 }
 
 .contact__column {
@@ -1928,6 +1930,10 @@ body.mouse .socials__item:hover {
     padding: 60px 0 15px 0;
   }
 
+  .header__container {
+    min-height: 50px;
+  }
+
   .about-me__container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1971,12 +1977,12 @@ body.mouse .socials__item:hover {
     font-size: 16px;
   }
 
-  .works__container {
+  .works__row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin: 0 !important;
+    margin: 0;
   }
 
   .works__column {

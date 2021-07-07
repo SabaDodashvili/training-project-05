@@ -1,8 +1,5 @@
 .contact {
   &__container {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 -7.5px;
     &.anim {
       .contact__column_video {
         opacity: 1;
@@ -14,7 +11,12 @@
       }
     }
   }
-
+  &__row {
+    margin: 0 -7.5px;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+  }
   &__column {
     height: 100%;
     flex: 0 1 70%;

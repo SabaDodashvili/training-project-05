@@ -1,7 +1,5 @@
 .works {
   &__container {
-    display: flex;
-    margin: 0 -10px !important;
     &.anim {
       .works-slider {
         opacity: 1;
@@ -12,9 +10,14 @@
         transform: translateX(0px);
       }
     }
+  }
+  &__row {
+    display: flex;
+    margin: 0 -10px;
+    height: 100%;
     @media (max-width: 767px) {
       flex-direction: column;
-      margin: 0 !important;
+      margin: 0;
     }
   }
 
