@@ -2,6 +2,23 @@
   &__row {
     display: flex;
     height: 100%;
+    &.anim {
+      .contacts {
+        transform: translateX(0);
+        opacity: 1;
+        transition: 0.8s ease all 0s;
+      }
+      .form {
+        transform: translateX(0);
+        opacity: 1;
+        transition: 0.8s ease all 0s;
+      }
+      .contact__video {
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+        transition: 0.8s ease all 0.6s;
+      }
+    }
     @media (max-width: 600px) {
       flex-direction: column;
       justify-content: space-between;
@@ -9,8 +26,6 @@
     }
   }
   &__container {
-    &.anim {
-    }
   }
   &__video {
     position: absolute;
@@ -20,8 +35,10 @@
     width: 350px;
     top: 50%;
     left: 100%;
-    transform: translateY(-50%);
     margin: 0 0 0 -175px;
+    transform: translateY(-50%) scale(0);
+    opacity: 0;
+    transition: 0.3s all ease 3s;
     @media (max-width: 992px) {
       height: 330px;
       width: 330px;
@@ -48,13 +65,16 @@
 .form {
   font-family: sans-serif;
   letter-spacing: 1px;
-  background-color: #fff;
+  background-color: transparent;
   flex: 0 1 60%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 50px 0 250px;
+  transform: translateX(120%);
+  opacity: 0;
+  transition: 0.3s all ease 3s;
   @media (max-width: 992px) {
     padding: 0 10px 0 195px;
   }
@@ -193,6 +213,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transform: translateX(-120%);
+  opacity: 0;
+  transition: 0.3s all ease 3s;
   @media (max-width: 600px) {
     padding: 0;
     flex: 0 1 50%;
