@@ -2142,22 +2142,38 @@ body.mouse .socials__item:hover {
 }
 
 @media (max-width: 600px) {
+  .contact__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 100%;
+  }
+
   .contact__video {
-    height: 180px;
-    width: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    margin: 0;
+    display: none;
   }
 
   .form {
-    padding: 0 0 0 20px;
+    padding: 0 0 15px 0;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
   }
 
   .form__title {
-    font-size: 18px;
+    font-size: 22px;
+    margin: 0 0 25px 0;
+  }
+
+  .form__group {
+    margin: 0 0 20px 0;
   }
 
   .form__button {
@@ -2176,7 +2192,18 @@ body.mouse .socials__item:hover {
   }
 
   .contacts {
-    padding: 20px 10px;
+    padding: 0;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
   }
 
   .contacts__date {
